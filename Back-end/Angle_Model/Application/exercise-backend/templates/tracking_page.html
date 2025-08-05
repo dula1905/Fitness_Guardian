@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise Tracking</title>
+</head>
+<body>
+    <h1>Tracking Exercise Form</h1>
+    <div id="video-container"></div>
+    <button onclick="stopTracking()">Stop Tracking</button>
+    <script>
+        const videoContainer = document.getElementById('video-container');
+        const stopTracking = () => {
+            fetch('/end-tracking', { method: 'POST' });
+            window.location.href = '/';
+        };
+
+        const ws = new WebSocket(`ws://${window.location.host}/video-feed`);
+        ws.onmessage = (event) => {
+            const img = document.createElement('img');
+            img.src = 'data:image/jpeg;base64,' + event.data;
+            videoContainer.innerHTML = '';
+            videoContainer.appendChild(img);
+        };
+    </script>
+</body>
+</html>

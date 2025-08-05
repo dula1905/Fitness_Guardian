@@ -1,0 +1,23 @@
+<!-- exercise_interface.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push-ups Interface</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='exercise_interface_style.css') }}">
+</head>
+<body>
+    <h1>Exercise Form Detector</h1>
+    <div class="container">
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" alt="Exercise Video">
+        </div>
+        <form action="/" method="get">
+            <button type="submit" class="end-btn">End</button>
+        </form>
+    </div>
+</body>
+</html>
+

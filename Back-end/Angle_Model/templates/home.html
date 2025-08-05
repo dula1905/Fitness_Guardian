@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Guardian</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home_style.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <h1>Fitness Guardian</h1>
+        <p>Select the Exercise you need to Perform</p>
+        <div class="exercise_buttons">
+            <form action="/bicep_curls_instructions" method="get">
+                <button type="submit">Bicep Curls</button>
+            </form>
+            <form action="/push_ups_instructions" method="get">
+                <button type="submit">Push Ups</button>
+            </form>
+            <form action="/squats_instructions" method="get">
+                <button type="submit">Squats</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

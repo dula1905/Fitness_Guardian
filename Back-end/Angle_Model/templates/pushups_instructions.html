@@ -1,0 +1,33 @@
+<!-- pushups_instructions.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Instructions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='instructions_style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Exercise Instructions</h1>
+    </header>
+
+    <div class="container">
+        <p>Here is an image showing how you should face the camera when performing the exercise:</p>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='push_up_ins2.jpg') }}" alt="Exercise Instructions">
+        </div>
+
+        <div class="buttons">
+            <form action="/" method="get">
+                <button type="submit" class="secondary-btn">Back</button>
+            </form>
+            <form action="{{ url_for('exercise_interface') }}" method="get">
+                <button type="submit" class="primary-btn">Next</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
